@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>for的图片生成应用</title>
+	<style>
+		#picture {
+			height: 800px;
+			width: 1000px;
+			position: relative;
+			display: block;
+			overflow: hidden;
+		}
+		#cover {
+			position: absolute;
+			height: 1000px;
+			width: 1300px;
+			top: 0;
+			left: 0;
+			display: block;
+			background: transparent;
+			font-size: 0;
+		}
+		div {
+			display: inline-block;
+			height: 10px;
+			width: 10px;
+			border: 1px solid #eee;
+			background: #eee;
+			margin: 0;
+		}
+	</style>
+	<script>
+	 	window.onload = function(){
+
+	 		var oCover = document.getElementById('cover'),
+	 			str = '', 
+	 			bits = document.getElementsByTagName('div');
+
+	 		for (var i=0; i<50000; i++) {
+	 			str += '<div></div>';
+	 		}
+	 		oCover.innerHTML = str;
+
+	 		for (var i=0; i<30400; i++) {
+	 			bits[i].onmouseover = function(){
+	 				this.style.background = 'transparent';
+	 			}
+	 		}
+
+
+	 	}
+	</script>
+</head>
+<body>
+	<section id="picture">
+		<img src="img/1.jpg">
+		<section id="cover"></section>
+	</section>
+</body>
+</html>
